@@ -13,6 +13,12 @@ class ControllerProductSpecial extends Controller {
 			$sort = 'p.sort_order';
 		}
 
+        if (isset($this->request->get['category'])) {
+            $categoryId = $this->request->get['category'];
+        } else {
+            $categoryId = false;
+        }
+
 		if (isset($this->request->get['order'])) {
 			$order = $this->request->get['order'];
 		} else {
@@ -33,6 +39,7 @@ class ControllerProductSpecial extends Controller {
 				    	
 		$this->document->setTitle($this->language->get('heading_title'));
 		$this->document->addScript('catalog/view/javascript/jquery/jquery.total-storage.min.js');
+		$this->document->addScript('catalog/view/javascript/custom/special.js');
 
 		$this->data['breadcrumbs'] = array();
 
@@ -85,22 +92,26 @@ class ControllerProductSpecial extends Controller {
 		$this->data['button_cart'] = $this->language->get('button_cart');	
 		$this->data['button_wishlist'] = $this->language->get('button_wishlist');
 		$this->data['button_compare'] = $this->language->get('button_compare');
-		
+		$this->data['filter_category'] = $categoryId;
+
 		$this->data['compare'] = $this->url->link('product/compare');
 		
 		$this->data['products'] = array();
 
 		$data = array(
-			'sort'  => $sort,
-			'order' => $order,
-			'start' => ($page - 1) * $limit,
-			'limit' => $limit
+			'sort'              => $sort,
+			'order'             => $order,
+			'start'             => ($page - 1) * $limit,
+			'limit'             => $limit,
+            'filter_category'   => $categoryId
 		);
 			
 		$product_total = $this->model_catalog_product->getTotalProductSpecials($data);
-			
-		$results = $this->model_catalog_product->getProductSpecials($data);
-			
+		$result_model = $this->model_catalog_product->getProductSpecials($data);
+
+		$results = $result_model['product_data'];
+		$category_data = $result_model['category_data'];
+
 		foreach ($results as $result) {
 			if ($result['image']) {
 				$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
@@ -125,13 +136,7 @@ class ControllerProductSpecial extends Controller {
 			} else {
 				$tax = false;
 			}				
-			
-			if ($this->config->get('config_review_status')) {
-				$rating = (int)$result['rating'];
-			} else {
-				$rating = false;
-			}
-						
+
 			$this->data['products'][] = array(
 				'product_id'  => $result['product_id'],
 				'thumb'       => $image,
@@ -142,8 +147,10 @@ class ControllerProductSpecial extends Controller {
 				'tax'         => $tax,
 				'rating'      => $result['rating'],
 				'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
+				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
 			);
+
+            $this->data['categories'] = $category_data;
 		}
 
 		$url = '';
