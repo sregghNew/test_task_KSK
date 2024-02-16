@@ -455,3 +455,8 @@ GROUP BY ps.product_id ORDER BY p.sort_order ASC, LCASE(pd.name) ASC LIMIT 0,25 
 2024-02-15 19:13:47 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
 2024-02-15 19:13:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
 2024-02-15 19:13:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 21:21:00 - PHP Notice:  Error: Unknown column 'ps.product_id' in 'on clause'<br />Error No: 1054<br />SELECT p.product_id, DATE_FORMAT(p.date_added, '%d/%m/%Y') AS date, pd.name
+        FROM oc_product p
+        LEFT JOIN oc_product_description pd ON (ps.product_id = p.product_id)
+        WHERE p.image LIKE '%macbook%';
+         in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50

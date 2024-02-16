@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*Нативный*/
+/*document.addEventListener('DOMContentLoaded', function() {
     let categories = document.querySelectorAll('[data-id="category_item"]');
 
     categories.forEach(function(category) {
@@ -22,5 +23,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+});*/
+/*Быстро поправил, пока никто не заметил, на jquery*/
+$(document).ready(function() {
+    let categories = $('[data-id="category_item"]');
 
+    categories.on('click', function(event) {
+        let category = $(this);
+        let input = category.find('input[type="radio"]');
+        input.prop('checked', true);
+
+        let categoryId = input.val();
+        if (categoryId == 0) {
+            let urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('category')) {
+                urlParams.delete('category');
+            }
+
+            window.location.href = `${window.location.pathname}?${urlParams.toString()}`;
+        } else {
+            let urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('category', categoryId);
+
+            window.location.href = `${window.location.pathname}?${urlParams.toString()}`;
+        }
+    });
+});
