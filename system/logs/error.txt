@@ -1,0 +1,462 @@
+2024-02-15 17:29:21 - PHP Notice:  Undefined variable: filter_category in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 306
+2024-02-15 17:29:23 - PHP Notice:  Undefined variable: filter_category in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 306
+2024-02-15 17:29:50 - PHP Notice:  Undefined variable: filter_category in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 306
+2024-02-15 17:41:50 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY ps.product_id ORDER BY p.sort_order ASC, LCASE(pd.name) ASC LIMIT 0,25' at line 18<br />Error No: 1064<br />SELECT DISTINCT
+    ps.product_id,
+    (SELECT AVG(rating) FROM oc_review r1 WHERE r1.product_id = ps.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating,
+    ptc.category_id,
+    cd.name AS category_name
+FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id)
+LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+LEFT JOIN oc_product_to_category ptc ON (p.product_id = ptc.product_id)
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+WHERE p.status = '1' 
+AND p.date_available <= NOW() 
+AND p2s.store_id = '0' 
+AND ps.customer_group_id = '1' 
+AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+GROUP BY ps.product_idGROUP BY ps.product_id ORDER BY p.sort_order ASC, LCASE(pd.name) ASC LIMIT 0,25 in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:27 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 17:50:28 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 17:59:09 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT ptc.*, cd.name  
+FROM oc_product_to_category ptc
+LEFT JOIN oc_category_de' at line 1<br />Error No: 1064<br />
+SELECT SELECT ptc.*, cd.name  
+FROM oc_product_to_category ptc
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+ in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 17:59:39 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT ptc.*, cd.name  
+FROM oc_product_to_category ptc
+LEFT JOIN oc_category_de' at line 1<br />Error No: 1064<br />
+SELECT SELECT ptc.*, cd.name  
+FROM oc_product_to_category ptc
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+; in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 17:59:40 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT ptc.*, cd.name  
+FROM oc_product_to_category ptc
+LEFT JOIN oc_category_de' at line 1<br />Error No: 1064<br />
+SELECT SELECT ptc.*, cd.name  
+FROM oc_product_to_category ptc
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+; in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 18:04:34 - PHP Notice:  Error: Unknown column 'cd.name' in 'field list'<br />Error No: 1054<br />SELECT DISTINCT
+    ps.product_id,
+    (SELECT AVG(rating) FROM oc_review r1 WHERE r1.product_id = ps.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating,
+    ptc.category_id,
+    cd.name AS category_name
+FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id)
+LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+LEFT JOIN oc_product_to_category ptc ON (p.product_id = ptc.product_id)
+
+WHERE p.status = '1' 
+AND p.date_available <= NOW() 
+AND p2s.store_id = '0' 
+AND ps.customer_group_id = '1' 
+AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+GROUP BY ps.product_id ORDER BY p.sort_order ASC, LCASE(pd.name) ASC LIMIT 0,25 in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 18:53:43 - PHP Notice:  Error: Unknown column 'ptc.name' in 'field list'<br />Error No: 1054<br />SELECT DISTINCT ptc.category_id, ptc.name,
+    (SELECT AVG(rating) FROM oc_review r1 WHERE r1.product_id = ps.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating,
+    ptc.category_id,
+    cd.name AS category_name
+FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id)
+LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+LEFT JOIN oc_product_to_category ptc ON (p.product_id = ptc.product_id)
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+WHERE p.status = '1' 
+AND p.date_available <= NOW() 
+AND p2s.store_id = '0' 
+AND ps.customer_group_id = '1' 
+AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+GROUP BY ps.product_id in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 18:56:36 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_' at line 5<br />Error No: 1064<br />SELECT DISTINCT cd.category_id, cd.name,
+    
+    ptc.category_id,
+
+FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id)
+LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+LEFT JOIN oc_product_to_category ptc ON (p.product_id = ptc.product_id)
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+WHERE p.status = '1' 
+AND p.date_available <= NOW() 
+AND p2s.store_id = '0' 
+AND ps.customer_group_id = '1' 
+AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+GROUP BY ps.product_id in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 18:58:56 - PHP Notice:  Error: Unknown column 'ptc.category_id' in 'on clause'<br />Error No: 1054<br />SELECT DISTINCT cd.category_id, cd.name
+    FROM oc_product_special ps
+    LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+    LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+    LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+    WHERE p.status = '1' 
+    AND p.date_available <= NOW() 
+    AND p2s.store_id = '0' 
+    AND ps.customer_group_id = '1' 
+    AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+    AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+    GROUP BY ps.product_id in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:16 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:16 - PHP Notice:  Undefined index:  in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 356
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:30 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:01:37 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 357
+2024-02-15 19:02:13 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_' at line 6<br />Error No: 1064<br />SELECT DISTINCT
+    ps.product_id,
+    (SELECT AVG(rating) FROM oc_review r1 WHERE r1.product_id = ps.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating,
+    ptc.category_id,
+
+FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id)
+LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+LEFT JOIN oc_product_to_category ptc ON (p.product_id = ptc.product_id)
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+WHERE p.status = '1' 
+AND p.date_available <= NOW() 
+AND p2s.store_id = '0' 
+AND ps.customer_group_id = '1' 
+AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+GROUP BY ps.product_id ORDER BY p.sort_order ASC, LCASE(pd.name) ASC LIMIT 0,25 in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 19:02:44 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_' at line 6<br />Error No: 1064<br />SELECT DISTINCT
+    ps.product_id,
+    (SELECT AVG(rating) FROM oc_review r1 WHERE r1.product_id = ps.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating,
+    ptc.category_id,
+
+FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id)
+LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+LEFT JOIN oc_product_to_category ptc ON (p.product_id = ptc.product_id)
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+WHERE p.status = '1' 
+AND p.date_available <= NOW() 
+AND p2s.store_id = '0' 
+AND ps.customer_group_id = '1' 
+AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+GROUP BY ps.product_id ORDER BY p.sort_order ASC, LCASE(pd.name) ASC LIMIT 0,25 in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 19:03:33 - PHP Notice:  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_' at line 6<br />Error No: 1064<br />SELECT DISTINCT
+    ps.product_id,
+    (SELECT AVG(rating) FROM oc_review r1 WHERE r1.product_id = ps.product_id AND r1.status = '1' GROUP BY r1.product_id) AS rating,
+    ptc.category_id,
+
+FROM oc_product_special ps
+LEFT JOIN oc_product p ON (ps.product_id = p.product_id)
+LEFT JOIN oc_product_description pd ON (p.product_id = pd.product_id)
+LEFT JOIN oc_product_to_store p2s ON (p.product_id = p2s.product_id)
+LEFT JOIN oc_product_to_category ptc ON (p.product_id = ptc.product_id)
+LEFT JOIN oc_category_description cd ON (ptc.category_id = cd.category_id)
+WHERE p.status = '1' 
+AND p.date_available <= NOW() 
+AND p2s.store_id = '0' 
+AND ps.customer_group_id = '1' 
+AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) 
+AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) 
+GROUP BY ps.product_id ORDER BY p.sort_order ASC, LCASE(pd.name) ASC LIMIT 0,25 in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
+2024-02-15 19:04:53 - PHP Notice:  Undefined variable: filter_category in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 289
+2024-02-15 19:04:57 - PHP Notice:  Undefined variable: filter_category in C:\OSPanel\domains\ksk\catalog\model\catalog\product.php on line 289
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: image in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 127
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 134
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: tax_class_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 134
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 146
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 146
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 152
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 160
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 162
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: description in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 163
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 167
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: reviews in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 168
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 169
+2024-02-15 19:09:26 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: image in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 127
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 134
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: tax_class_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 134
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 146
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 146
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 152
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 160
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 162
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: description in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 163
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 167
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: reviews in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 168
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 169
+2024-02-15 19:09:57 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 114
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 124
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: image in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 132
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: tax_class_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 144
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 157
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 165
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 167
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: description in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 168
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 172
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: reviews in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 173
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 174
+2024-02-15 19:10:00 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 124
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: image in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 132
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: tax_class_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 144
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 157
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 165
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 167
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: description in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 168
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 172
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: reviews in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 173
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 174
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:08 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 124
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: image in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 132
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: tax_class_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 144
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 157
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 165
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 167
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: description in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 168
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 172
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: reviews in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 173
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 174
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:14 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 124
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: image in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 132
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: tax_class_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 139
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 144
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: special in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: price in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 151
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 157
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 165
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 167
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: description in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 168
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: rating in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 172
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: reviews in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 173
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: product_id in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 174
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:10:18 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 119
+2024-02-15 19:11:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 120
+2024-02-15 19:11:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 120
+2024-02-15 19:11:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 120
+2024-02-15 19:11:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 120
+2024-02-15 19:11:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 120
+2024-02-15 19:11:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 120
+2024-02-15 19:11:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 120
+2024-02-15 19:12:42 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:42 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:42 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:42 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:42 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:42 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:42 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:56 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:56 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:56 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:56 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:56 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:56 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:12:56 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:38 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:38 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:38 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:38 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:38 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:38 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:38 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:43 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:44 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:45 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:46 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:46 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:46 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:47 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:47 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:47 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:47 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 19:13:48 - PHP Notice:  Undefined index: category_name in C:\OSPanel\domains\ksk\catalog\controller\product\special.php on line 123
+2024-02-15 21:21:00 - PHP Notice:  Error: Unknown column 'ps.product_id' in 'on clause'<br />Error No: 1054<br />SELECT p.product_id, DATE_FORMAT(p.date_added, '%d/%m/%Y') AS date, pd.name
+        FROM oc_product p
+        LEFT JOIN oc_product_description pd ON (ps.product_id = p.product_id)
+        WHERE p.image LIKE '%macbook%';
+         in C:\OSPanel\domains\ksk\system\database\mysql.php on line 50
